@@ -1,7 +1,8 @@
+//Stephen Colandro
 import java.time.LocalDate;
 
 // Abstract Pet class
-abstract class Pet {
+	public abstract class Pet {
     private String name;
     private LocalDate birthdate;
     private double price;
@@ -16,14 +17,37 @@ abstract class Pet {
     }
 
     // Accessor and mutator methods
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-    public LocalDate getBirthdate() { return birthdate; }
-    public void setBirthdate(LocalDate birthdate) { this.birthdate = birthdate; }
-    public double getPrice() { return price; }
-    public void setPrice(double price) { this.price = price; }
-    public String getSpeciesType() { return speciesType; }
-    public void setSpeciesType(String speciesType) { this.speciesType = speciesType; }
+    public String getName() { 
+    	return name; 
+    }
+    
+    public void setName(String name) { 
+    	this.name = name; 
+    }
+    
+    public LocalDate getBirthdate() { 
+    	return birthdate; 
+    }
+    
+    public void setBirthdate(LocalDate birthdate) { 
+    	this.birthdate = birthdate; 
+    }
+    
+    public double getPrice() { 
+    	return price; 
+    }
+    
+    public void setPrice(double price) { 
+    	this.price = price; 
+    }
+    
+    public String getSpeciesType() { 
+    	return speciesType; 
+    }
+    
+    public void setSpeciesType(String speciesType) { 
+    	this.speciesType = speciesType; 
+    }
 
     // Abstract method to get special feature (to be implemented in subclasses)
     public abstract String getSpecialFeature();
@@ -43,17 +67,22 @@ class DogCat extends Pet {
         this.breed = breed;
     }
 
-    public String getSpecialFeature() { return breed; }
-    public void setBreed(String breed) { this.breed = breed; }
+    public String getSpecialFeature() { 
+    	return breed; 
+    }
+    
+    public void setBreed(String breed) {
+    	this.breed = breed; 
+    }
 
-    @Override
+    
     public String toString() {
         return super.toString() + ", Breed: " + breed;
     }
 }
 
 // Subclass for Reptiles
-class Reptile extends Pet {
+	class Reptile extends Pet {
     private String bloodType; // Special feature
 
     public Reptile(String name, LocalDate birthdate, double price, String speciesType, String bloodType) {
@@ -61,10 +90,15 @@ class Reptile extends Pet {
         this.bloodType = bloodType;
     }
 
-    public String getSpecialFeature() { return bloodType; }
-    public void setBloodType(String bloodType) { this.bloodType = bloodType; }
+    public String getSpecialFeature() { 
+    	return bloodType; 
+    }
+    
+    public void setBloodType(String bloodType) { 
+    	this.bloodType = bloodType; 
+    }
 
-    @Override
+    
     public String toString() {
         return super.toString() + ", Blood Type: " + bloodType;
     }
@@ -79,28 +113,36 @@ class Bird extends Pet {
         this.movementType = movementType;
     }
 
-    public String getSpecialFeature() { return movementType; }
-    public void setMovementType(String movementType) { this.movementType = movementType; }
+    public String getSpecialFeature() { 
+    	return movementType; 
+    }
+    
+    public void setMovementType(String movementType) {
+    	this.movementType = movementType; 
+    }
 
-    @Override
     public String toString() {
         return super.toString() + ", Movement Type: " + movementType;
     }
 }
 
 // Subclass for Rabbits & Small Animals
-class RabbitSmallAnimal extends Pet {
+	class RabbitSmallAnimal extends Pet {
     private boolean itBites; // Special feature
 
     public RabbitSmallAnimal(String name, LocalDate birthdate, double price, String speciesType,boolean itBites) {
 		super(name, birthdate, price, speciesType);
 		this.itBites = itBites;
+	}
+		public String getSpecialFeature() { 
+			return itBites ? "yes" : "no"; 
 		}
-		public String getSpecialFeature() { return itBites ? "yes" : "no"; }
-		public void setItBites(boolean itBites) { this.itBites = itBites; }
 		
-		@Override
+		public void setItBites(boolean itBites) {
+			this.itBites = itBites; 
+		}
+		
 		public String toString() {
 			return super.toString() + ", It Bites: " + getSpecialFeature();
 		}
-	}		
+}		

@@ -1,3 +1,4 @@
+//Stephen Colandro
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -45,6 +46,7 @@ public class TestMyPetStore {
                 petList.add(pet); 
                 }
             }
+        //Catch
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -66,9 +68,9 @@ public class TestMyPetStore {
                     System.out.println("End of Page " + pageNumber++);
                 }
                 System.out.println("Page " + pageNumber);
-                System.out.println("-------------------------------------------------");
+                System.out.println("------------------------------------------------------------------------");
                 System.out.printf("%-20s %-15s %-10s %-15s %-15s%n", "Name", "Birthdate", "Price", "Species", "Feature");
-                System.out.println("-------------------------------------------------");
+                System.out.println("------------------------------------------------------------------------");
             }
             System.out.printf("%-20s %-15s %-10.2f %-15s %-15s%n", pet.getName(), pet.getBirthdate(), pet.getPrice(), pet.getSpeciesType(), pet.getSpecialFeature());
             petCounter++;
@@ -86,5 +88,5 @@ public class TestMyPetStore {
     sortPetsByPrice();
 
     printReport();
-}
+    }
 }            
